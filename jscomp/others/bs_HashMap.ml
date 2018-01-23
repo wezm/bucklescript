@@ -177,8 +177,8 @@ let has0 ~hash ~eq h key =
 let create0 = C.create0
 let clear0 = C.clear0
 let size0 = C.size
-let forEach0 = N.iter0
-let reduce0 = N.fold0
+let forEach0 = N.forEach0
+let reduce0 = N.reduce0
 let logStats0 = N.logStats0
 let filterMapDone0 = N.filterMapInplace0
 let toArray0 = N.toArray0
@@ -188,8 +188,8 @@ let create initialize_size ~dict =
   B.bag ~data:(create0 initialize_size) ~dict 
 let clear h = clear0 (B.data h)
 let size h = C.size (B.data h)                 
-let forEach h f = N.iter0 (B.data h) f
-let reduce h init f = N.fold0 (B.data h) init f
+let forEach h f = N.forEach0 (B.data h) f
+let reduce h init f = N.reduce0 (B.data h) init f
 let logStats h = logStats0 (B.data h)
 
 let setDone (type a)  (type id) (h : (a,_,id) t) (key:a) info = 
@@ -218,8 +218,8 @@ let filterMap h f = filterMapDone h f; h
   
 let toArray h = toArray0 (B.data h)
 
-let ofArray0  ~hash ~eq arr  = 
-  let len = Bs.Array.length arr in 
+let ofArray0 arr ~hash ~eq = 
+  let len = A.length arr in 
   let v = create0 len in 
   for i = 0 to len - 1 do 
     let key,value = (Bs.Array.unsafe_get arr i) in 
@@ -229,7 +229,7 @@ let ofArray0  ~hash ~eq arr  =
 
 (* TOOD: optimize heuristics for resizing *)  
 let mergeArrayDone0  h arr ~hash ~eq =   
-  let len = Bs.Array.length arr in 
+  let len = A.length arr in 
   for i = 0 to len - 1 do 
     let key,value = (A.unsafe_get arr i) in 
     setDone0 h  ~eq ~hash key value

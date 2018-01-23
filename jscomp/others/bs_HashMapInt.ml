@@ -138,7 +138,7 @@ let rec findAux  (key : key) buckets =
 
 let get  h (key : key) =
   let h_buckets = C.buckets h in 
-  let nid = hash key  land (Array.length h_buckets - 1) in 
+  let nid = hash key  land (A.length h_buckets - 1) in 
   match C.toOpt @@ A.unsafe_get h_buckets nid with
   | None -> None
   | Some cell1 ->
@@ -163,9 +163,9 @@ let rec memInBucket (key : key) cell =
     | Some nextCell -> memInBucket  key nextCell
      )
     
-let has  h key =
+let has h key =
   let h_buckets = C.buckets h in 
-  let nid = hash key land (Array.length h_buckets - 1) in 
+  let nid = hash key land (A.length h_buckets - 1) in 
   let bucket = A.unsafe_get h_buckets nid in 
   match C.toOpt bucket with 
   | None -> false
@@ -176,25 +176,25 @@ let has  h key =
 let create = C.create0
 let clear = C.clear0
 let size = C.size
-let forEach = N.iter0
-let reduce = N.fold0
+let forEach = N.forEach0
+let reduce = N.reduce0
 let logStats = N.logStats0
 let filterMapDone = N.filterMapInplace0
 let filterMap h f = filterMapDone h f; h
 let toArray = N.toArray0 
 
 let ofArray arr  = 
-  let len = Bs.Array.length arr in 
+  let len = A.length arr in 
   let v = create len in 
   for i = 0 to len - 1 do 
-    let k,value = (Bs.Array.unsafe_get arr i) in
+    let k,value = (A.unsafe_get arr i) in
     setDone v k value
   done ;
   v
 
 (* TOOD: optimize heuristics for resizing *)  
 let mergeArrayDone h arr =   
-  let len = Bs.Array.length arr in 
+  let len = A.length arr in 
   for i = 0 to len - 1 do 
     let k,v = (A.unsafe_get arr i) in
     setDone h k v 

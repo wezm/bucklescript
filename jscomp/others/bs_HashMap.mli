@@ -169,9 +169,9 @@ val size0: ('a, 'b, 'id) t0 -> int
 val logStats0: ('a, 'b, 'id) t0 -> unit
 val toArray0: ('a, 'b, 'id) t0 -> ('a * 'b) array
 val ofArray0: 
+  ('a * 'b) array ->
   hash:('a,'id) Bs_Hash.hash  -> 
-  eq:('a,'id) Bs_Hash.eq -> 
-  ('a * 'b) array -> 
+  eq:('a,'id) Bs_Hash.eq ->   
   ('a, 'b, 'id) t0      
 val mergeArray0: 
   ('a, 'b, 'id) t0 ->
