@@ -1,0 +1,251 @@
+<!doctype html>
+<html>
+<head>
+                 <link rel="stylesheet" href="../api_static/tomorrow-night.css">
+                 <link rel="stylesheet" href="../api_static/style.css" type="text/css">
+                 <script src="../api_static//highlight.pack.js"></script>
+                 <script src="../api_static//script.js"></script>
+                 <script>hljs.initHighlightingOnLoad();</script> 
+                 <meta charset="utf8">
+                 <link rel="previous" href="Bs.html"><link rel="next" href="Bs_Bag.html">
+                 <title> Bs_Array </title></head> 
+               <body>
+<nav class="module-index"><ul><li><a href="Bs.html">Bs</a></li>
+<li><a href="Bs_Array.html">Bs_Array</a></li>
+<li><a href="Bs_Bag.html">Bs_Bag</a></li>
+<li><a href="Bs_BagM.html">Bs_BagM</a></li>
+<li><a href="Bs_Cmp.html">Bs_Cmp</a></li>
+<li><a href="Bs_Hash.html">Bs_Hash</a></li>
+<li><a href="Bs_HashMap.html">Bs_HashMap</a></li>
+<li><a href="Bs_HashMapInt.html">Bs_HashMapInt</a></li>
+<li><a href="Bs_HashMapString.html">Bs_HashMapString</a></li>
+<li><a href="Bs_HashMultiMap.html">Bs_HashMultiMap</a></li>
+<li><a href="Bs_HashSet.html">Bs_HashSet</a></li>
+<li><a href="Bs_HashSetInt.html">Bs_HashSetInt</a></li>
+<li><a href="Bs_HashSetString.html">Bs_HashSetString</a></li>
+<li><a href="Bs_List.html">Bs_List</a></li>
+<li><a href="Bs_Map.html">Bs_Map</a></li>
+<li><a href="Bs_MapInt.html">Bs_MapInt</a></li>
+<li><a href="Bs_MapIntM.html">Bs_MapIntM</a></li>
+<li><a href="Bs_MapM.html">Bs_MapM</a></li>
+<li><a href="Bs_MapString.html">Bs_MapString</a></li>
+<li><a href="Bs_MapStringM.html">Bs_MapStringM</a></li>
+<li><a href="Bs_Queue.html">Bs_Queue</a></li>
+<li><a href="Bs_Range.html">Bs_Range</a></li>
+<li><a href="Bs_Set.html">Bs_Set</a></li>
+<li><a href="Bs_SetInt.html">Bs_SetInt</a></li>
+<li><a href="Bs_SetIntM.html">Bs_SetIntM</a></li>
+<li><a href="Bs_SetM.html">Bs_SetM</a></li>
+<li><a href="Bs_SetString.html">Bs_SetString</a></li>
+<li><a href="Bs_SetStringM.html">Bs_SetStringM</a></li>
+<li><a href="Bs_Sort.html">Bs_Sort</a></li>
+<li><a href="Bs_SortInt.html">Bs_SortInt</a></li>
+<li><a href="Bs_SortString.html">Bs_SortString</a></li>
+<li><a href="Bs_Stack.html">Bs_Stack</a></li>
+<li><a href="Bs_internalAVLset.html">Bs_internalAVLset</a></li>
+<li><a href="Bs_internalAVLtree.html">Bs_internalAVLtree</a></li>
+<li><a href="Bs_internalBuckets.html">Bs_internalBuckets</a></li>
+<li><a href="Bs_internalBucketsType.html">Bs_internalBucketsType</a></li>
+<li><a href="Bs_internalMapInt.html">Bs_internalMapInt</a></li>
+<li><a href="Bs_internalMapString.html">Bs_internalMapString</a></li>
+<li><a href="Bs_internalMutableAVLMap.html">Bs_internalMutableAVLMap</a></li>
+<li><a href="Bs_internalSetBuckets.html">Bs_internalSetBuckets</a></li>
+<li><a href="Bs_internalSetInt.html">Bs_internalSetInt</a></li>
+<li><a href="Bs_internalSetString.html">Bs_internalSetString</a></li>
+<li><a href="Dom.html">Dom</a></li>
+<li><a href="Dom_storage.html">Dom_storage</a></li>
+<li><a href="Js.html">Js</a></li>
+<li><a href="Js_array.html">Js_array</a></li>
+<li><a href="Js_boolean.html">Js_boolean</a></li>
+<li><a href="Js_cast.html">Js_cast</a></li>
+<li><a href="Js_console.html">Js_console</a></li>
+<li><a href="Js_date.html">Js_date</a></li>
+<li><a href="Js_dict.html">Js_dict</a></li>
+<li><a href="Js_exn.html">Js_exn</a></li>
+<li><a href="Js_float.html">Js_float</a></li>
+<li><a href="Js_global.html">Js_global</a></li>
+<li><a href="Js_int.html">Js_int</a></li>
+<li><a href="Js_int64.html">Js_int64</a></li>
+<li><a href="Js_internal.html">Js_internal</a></li>
+<li><a href="Js_json.html">Js_json</a></li>
+<li><a href="Js_list.html">Js_list</a></li>
+<li><a href="Js_mapperRt.html">Js_mapperRt</a></li>
+<li><a href="Js_math.html">Js_math</a></li>
+<li><a href="Js_nativeint.html">Js_nativeint</a></li>
+<li><a href="Js_null.html">Js_null</a></li>
+<li><a href="Js_null_undefined.html">Js_null_undefined</a></li>
+<li><a href="Js_obj.html">Js_obj</a></li>
+<li><a href="Js_option.html">Js_option</a></li>
+<li><a href="Js_primitive.html">Js_primitive</a></li>
+<li><a href="Js_promise.html">Js_promise</a></li>
+<li><a href="Js_re.html">Js_re</a></li>
+<li><a href="Js_result.html">Js_result</a></li>
+<li><a href="Js_string.html">Js_string</a></li>
+<li><a href="Js_typed_array.html">Js_typed_array</a></li>
+<li><a href="Js_types.html">Js_types</a></li>
+<li><a href="Js_undefined.html">Js_undefined</a></li>
+<li><a href="Js_unsafe.html">Js_unsafe</a></li>
+<li><a href="Js_vector.html">Js_vector</a></li>
+<li><a href="Node.html">Node</a></li>
+<li><a href="Node_buffer.html">Node_buffer</a></li>
+<li><a href="Node_child_process.html">Node_child_process</a></li>
+<li><a href="Node_fs.html">Node_fs</a></li>
+<li><a href="Node_module.html">Node_module</a></li>
+<li><a href="Node_path.html">Node_path</a></li>
+<li><a href="Node_process.html">Node_process</a></li></ul></nav>
+<div class="navbar"><a class="pre" href="Bs.html" title="Bs">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="Bs_Bag.html" title="Bs_Bag">Next</a>
+</div>
+<h1>Module <a href="type_Bs_Array.html">Bs_Array</a></h1>
+
+<pre><span class="keyword">module</span> Bs_Array: <code class="code">sig</code> <a href="Bs_Array.html">..</a> <code class="code">end</code></pre><div class="info module top">
+                    <div class="not-examples">
+                    Array operations.<br>
+ 
+                    </div>
+                    
+                    </div>
+
+                  <hr width="100%">
+
+<pre><span id="VALlength"><span class="keyword">val</span> length</span> : <code class="type">'a array -> int</code></pre><div class="info ">
+                    <div class="not-examples">
+                    Return the length (number of elements) of the given array.<br>
+ 
+                    </div>
+                    
+                    </div>
+
+                  
+<pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type">'a array -> int -> 'a</code></pre><div class="info ">
+                    <div class="not-examples">
+                    <code class="code">Array.get a n</code> returns the element number <code class="code">n</code> of array <code class="code">a</code>.
+   The first element has number 0.
+   The last element has number <code class="code">Array.length a - 1</code>.
+   You can also write <code class="code">a.(n)</code> instead of <code class="code">Array.get a n</code>.
+<p>
+
+   Raise <code class="code">Invalid_argument "index out of bounds"</code>
+   if <code class="code">n</code> is outside the range 0 to <code class="code">(Array.length a - 1)</code>.<br>
+ 
+                    </div>
+                    
+                    </div>
+
+                  
+<pre><span id="VALset"><span class="keyword">val</span> set</span> : <code class="type">'a array -> int -> 'a -> unit</code></pre><div class="info ">
+                    <div class="not-examples">
+                    <code class="code">Array.set a n x</code> modifies array <code class="code">a</code> in place, replacing
+   element number <code class="code">n</code> with <code class="code">x</code>.
+   You can also write <code class="code">a.(n) &lt;- x</code> instead of <code class="code">Array.set a n x</code>.
+<p>
+
+   Raise <code class="code">Invalid_argument "index out of bounds"</code>
+   if <code class="code">n</code> is outside the range 0 to <code class="code">Array.length a - 1</code>.<br>
+ 
+                    </div>
+                    
+                    </div>
+
+                  
+<pre><span id="VALmakeUninitialized"><span class="keyword">val</span> makeUninitialized</span> : <code class="type">int -> 'a <a href="Js.html#TYPEundefined">Js.undefined</a> array</code></pre>
+<pre><span id="VALmakeUninitializedUnsafe"><span class="keyword">val</span> makeUninitializedUnsafe</span> : <code class="type">int -> 'a array</code></pre>
+<pre><span id="VALinitExn"><span class="keyword">val</span> initExn</span> : <code class="type">int -> (int -> 'a [@bs]) -> 'a array</code></pre>
+<pre><span id="VALshuffleDone"><span class="keyword">val</span> shuffleDone</span> : <code class="type">'a array -> unit</code></pre>
+<pre><span id="VALshuffle"><span class="keyword">val</span> shuffle</span> : <code class="type">'a array -> 'a array</code></pre><div class="info ">
+                    <div class="not-examples">
+                    <code class="code">shuffle xs</code> it mutates <code class="code">xs</code> and return
+    <code class="code">xs</code> for chaining<br>
+ 
+                    </div>
+                    
+                    </div>
+
+                  
+<pre><span id="VALzip"><span class="keyword">val</span> zip</span> : <code class="type">'a array -> 'b array -> ('a * 'b) array</code></pre><div class="info ">
+                    <div class="not-examples">
+                    <code class="code">zip a b</code> stop with the shorter array<br>
+ 
+                    </div>
+                    
+                    </div>
+
+                  
+<pre><span id="VALmakeMatrixExn"><span class="keyword">val</span> makeMatrixExn</span> : <code class="type">int -> int -> 'a -> 'a array array</code></pre>
+<pre><span id="VALappend"><span class="keyword">val</span> append</span> : <code class="type">'a array -> 'a array -> 'a array</code></pre><div class="info ">
+                    <div class="not-examples">
+                    Note it returns a fresh array containing the
+    concatenation of the arrays <code class="code">v1</code> and <code class="code">v2</code>, so even if <code class="code">v1</code> or <code class="code">v2</code>
+    is empty, it can not be shared<br>
+ 
+                    </div>
+                    
+                    </div>
+
+                  
+<pre><span id="VALconcat"><span class="keyword">val</span> concat</span> : <code class="type">'a array list -> 'a array</code></pre>
+<pre><span id="VALsubExn"><span class="keyword">val</span> subExn</span> : <code class="type">'a array -> int -> int -> 'a array</code></pre>
+<pre><span id="VALcopy"><span class="keyword">val</span> copy</span> : <code class="type">'a array -> 'a array</code></pre><div class="info ">
+                    <div class="not-examples">
+                    <code class="code">.copy a</code> returns a copy of <code class="code">a</code>, that is, a fresh array
+   containing the same elements as <code class="code">a</code>.<br>
+ 
+                    </div>
+                    
+                    </div>
+
+                  
+<pre><span id="VALfill"><span class="keyword">val</span> fill</span> : <code class="type">'a array -> int -> int -> 'a -> bool</code></pre><div class="info ">
+                    <div class="not-examples">
+                    <code class="code">fill a ofs len x</code> modifies the array <code class="code">a</code> in place,
+    storing <code class="code">x</code> in elements number <code class="code">ofs</code> to <code class="code">ofs + len - 1</code>.
+<p>
+
+    return false means the input is invalid, the array is unchanged<br>
+ 
+                    </div>
+                    
+                    </div>
+
+                  
+<pre><span id="VALblit"><span class="keyword">val</span> blit</span> : <code class="type">'a array -> int -> 'a array -> int -> int -> bool</code></pre><div class="info ">
+                    <div class="not-examples">
+                    <code class="code">blit v1 o1 v2 o2 len</code> copies <code class="code">len</code> elements
+   from array <code class="code">v1</code>, starting at element number <code class="code">o1</code>, to array <code class="code">v2</code>,
+   starting at element number <code class="code">o2</code>. It works correctly even if
+   <code class="code">v1</code> and <code class="code">v2</code> are the same array, and the source and
+   destination chunks overlap.
+<p>
+
+    return false means the input is invalid, the array is unchnaged<br>
+ 
+                    </div>
+                    
+                    </div>
+
+                  
+<pre><span id="VALblitUnsafe"><span class="keyword">val</span> blitUnsafe</span> : <code class="type">'a array -> int -> 'a array -> int -> int -> unit</code></pre>
+<pre><span id="VALtoList"><span class="keyword">val</span> toList</span> : <code class="type">'a array -> 'a list</code></pre>
+<pre><span id="VALofList"><span class="keyword">val</span> ofList</span> : <code class="type">'a list -> 'a array</code></pre>
+<pre><span id="VALforEach"><span class="keyword">val</span> forEach</span> : <code class="type">'a array -> ('a -> unit [@bs]) -> unit</code></pre>
+<pre><span id="VALmap"><span class="keyword">val</span> map</span> : <code class="type">'a array -> ('a -> 'b [@bs]) -> 'b array</code></pre>
+<pre><span id="VALforEachi"><span class="keyword">val</span> forEachi</span> : <code class="type">'a array -> (int -> 'a -> unit [@bs]) -> unit</code></pre>
+<pre><span id="VALmapi"><span class="keyword">val</span> mapi</span> : <code class="type">'a array -> (int -> 'a -> 'b [@bs]) -> 'b array</code></pre>
+<pre><span id="VALreduce"><span class="keyword">val</span> reduce</span> : <code class="type">'b array -> 'a -> ('a -> 'b -> 'a [@bs]) -> 'a</code></pre>
+<pre><span id="VALreduceFromTail"><span class="keyword">val</span> reduceFromTail</span> : <code class="type">'b array -> 'a -> ('a -> 'b -> 'a [@bs]) -> 'a</code></pre>
+<pre><span id="VALforAll"><span class="keyword">val</span> forAll</span> : <code class="type">'a array -> ('a -> bool [@bs]) -> bool</code></pre>
+<pre><span id="VALforAll2"><span class="keyword">val</span> forAll2</span> : <code class="type">'a array -> 'b array -> ('a -> 'b -> bool [@bs]) -> bool</code></pre><div class="info ">
+                    <div class="not-examples">
+                    <code class="code">forAll2 a b</code> return false when <code class="code">length a &lt;&gt; length b</code><br>
+ 
+                    </div>
+                    
+                    </div>
+
+                  
+<pre><span id="VALcmp"><span class="keyword">val</span> cmp</span> : <code class="type">'a array -> 'a array -> ('a -> 'a -> int [@bs]) -> int</code></pre>
+<pre><span id="VALeq"><span class="keyword">val</span> eq</span> : <code class="type">'a array -> 'a array -> ('a -> 'a -> bool [@bs]) -> bool</code></pre>
+<pre><span id="VALunsafe_get"><span class="keyword">val</span> unsafe_get</span> : <code class="type">'a array -> int -> 'a</code></pre>
+<pre><span id="VALunsafe_set"><span class="keyword">val</span> unsafe_set</span> : <code class="type">'a array -> int -> 'a -> unit</code></pre>
+<pre><span id="VALtruncateToLengthUnsafe"><span class="keyword">val</span> truncateToLengthUnsafe</span> : <code class="type">'a array -> int -> unit</code></pre></body></html>

@@ -1,0 +1,230 @@
+<!doctype html>
+<html>
+<head>
+                 <link rel="stylesheet" href="../api_static/tomorrow-night.css">
+                 <link rel="stylesheet" href="../api_static/style.css" type="text/css">
+                 <script src="../api_static//highlight.pack.js"></script>
+                 <script src="../api_static//script.js"></script>
+                 <script>hljs.initHighlightingOnLoad();</script> 
+                 <meta charset="utf8">
+                 <link rel="previous" href="Bs.Queue.html"><link rel="next" href="Bs.HashSet.html">
+                 <title> Bs.HashMap </title></head> 
+               <body>
+<nav class="module-index"><ul><li><a href="Bs.html">Bs</a></li>
+<li><a href="Bs_Array.html">Bs_Array</a></li>
+<li><a href="Bs_Bag.html">Bs_Bag</a></li>
+<li><a href="Bs_BagM.html">Bs_BagM</a></li>
+<li><a href="Bs_Cmp.html">Bs_Cmp</a></li>
+<li><a href="Bs_Hash.html">Bs_Hash</a></li>
+<li><a href="Bs_HashMap.html">Bs_HashMap</a></li>
+<li><a href="Bs_HashMapInt.html">Bs_HashMapInt</a></li>
+<li><a href="Bs_HashMapString.html">Bs_HashMapString</a></li>
+<li><a href="Bs_HashMultiMap.html">Bs_HashMultiMap</a></li>
+<li><a href="Bs_HashSet.html">Bs_HashSet</a></li>
+<li><a href="Bs_HashSetInt.html">Bs_HashSetInt</a></li>
+<li><a href="Bs_HashSetString.html">Bs_HashSetString</a></li>
+<li><a href="Bs_List.html">Bs_List</a></li>
+<li><a href="Bs_Map.html">Bs_Map</a></li>
+<li><a href="Bs_MapInt.html">Bs_MapInt</a></li>
+<li><a href="Bs_MapIntM.html">Bs_MapIntM</a></li>
+<li><a href="Bs_MapM.html">Bs_MapM</a></li>
+<li><a href="Bs_MapString.html">Bs_MapString</a></li>
+<li><a href="Bs_MapStringM.html">Bs_MapStringM</a></li>
+<li><a href="Bs_Queue.html">Bs_Queue</a></li>
+<li><a href="Bs_Range.html">Bs_Range</a></li>
+<li><a href="Bs_Set.html">Bs_Set</a></li>
+<li><a href="Bs_SetInt.html">Bs_SetInt</a></li>
+<li><a href="Bs_SetIntM.html">Bs_SetIntM</a></li>
+<li><a href="Bs_SetM.html">Bs_SetM</a></li>
+<li><a href="Bs_SetString.html">Bs_SetString</a></li>
+<li><a href="Bs_SetStringM.html">Bs_SetStringM</a></li>
+<li><a href="Bs_Sort.html">Bs_Sort</a></li>
+<li><a href="Bs_SortInt.html">Bs_SortInt</a></li>
+<li><a href="Bs_SortString.html">Bs_SortString</a></li>
+<li><a href="Bs_Stack.html">Bs_Stack</a></li>
+<li><a href="Bs_internalAVLset.html">Bs_internalAVLset</a></li>
+<li><a href="Bs_internalAVLtree.html">Bs_internalAVLtree</a></li>
+<li><a href="Bs_internalBuckets.html">Bs_internalBuckets</a></li>
+<li><a href="Bs_internalBucketsType.html">Bs_internalBucketsType</a></li>
+<li><a href="Bs_internalMapInt.html">Bs_internalMapInt</a></li>
+<li><a href="Bs_internalMapString.html">Bs_internalMapString</a></li>
+<li><a href="Bs_internalMutableAVLMap.html">Bs_internalMutableAVLMap</a></li>
+<li><a href="Bs_internalSetBuckets.html">Bs_internalSetBuckets</a></li>
+<li><a href="Bs_internalSetInt.html">Bs_internalSetInt</a></li>
+<li><a href="Bs_internalSetString.html">Bs_internalSetString</a></li>
+<li><a href="Dom.html">Dom</a></li>
+<li><a href="Dom_storage.html">Dom_storage</a></li>
+<li><a href="Js.html">Js</a></li>
+<li><a href="Js_array.html">Js_array</a></li>
+<li><a href="Js_boolean.html">Js_boolean</a></li>
+<li><a href="Js_cast.html">Js_cast</a></li>
+<li><a href="Js_console.html">Js_console</a></li>
+<li><a href="Js_date.html">Js_date</a></li>
+<li><a href="Js_dict.html">Js_dict</a></li>
+<li><a href="Js_exn.html">Js_exn</a></li>
+<li><a href="Js_float.html">Js_float</a></li>
+<li><a href="Js_global.html">Js_global</a></li>
+<li><a href="Js_int.html">Js_int</a></li>
+<li><a href="Js_int64.html">Js_int64</a></li>
+<li><a href="Js_internal.html">Js_internal</a></li>
+<li><a href="Js_json.html">Js_json</a></li>
+<li><a href="Js_list.html">Js_list</a></li>
+<li><a href="Js_mapperRt.html">Js_mapperRt</a></li>
+<li><a href="Js_math.html">Js_math</a></li>
+<li><a href="Js_nativeint.html">Js_nativeint</a></li>
+<li><a href="Js_null.html">Js_null</a></li>
+<li><a href="Js_null_undefined.html">Js_null_undefined</a></li>
+<li><a href="Js_obj.html">Js_obj</a></li>
+<li><a href="Js_option.html">Js_option</a></li>
+<li><a href="Js_primitive.html">Js_primitive</a></li>
+<li><a href="Js_promise.html">Js_promise</a></li>
+<li><a href="Js_re.html">Js_re</a></li>
+<li><a href="Js_result.html">Js_result</a></li>
+<li><a href="Js_string.html">Js_string</a></li>
+<li><a href="Js_typed_array.html">Js_typed_array</a></li>
+<li><a href="Js_types.html">Js_types</a></li>
+<li><a href="Js_undefined.html">Js_undefined</a></li>
+<li><a href="Js_unsafe.html">Js_unsafe</a></li>
+<li><a href="Js_vector.html">Js_vector</a></li>
+<li><a href="Node.html">Node</a></li>
+<li><a href="Node_buffer.html">Node_buffer</a></li>
+<li><a href="Node_child_process.html">Node_child_process</a></li>
+<li><a href="Node_fs.html">Node_fs</a></li>
+<li><a href="Node_module.html">Node_module</a></li>
+<li><a href="Node_path.html">Node_path</a></li>
+<li><a href="Node_process.html">Node_process</a></li></ul></nav>
+<div class="navbar"><a class="pre" href="Bs.Queue.html" title="Bs.Queue">Previous</a>
+&nbsp;<a class="up" href="Bs.html" title="Bs">Up</a>
+&nbsp;<a class="post" href="Bs.HashSet.html" title="Bs.HashSet">Next</a>
+</div>
+<h1>Module <a href="type_Bs.HashMap.html">Bs.HashMap</a></h1>
+
+<pre><span class="keyword">module</span> HashMap: <code class="type"><a href="Bs_HashMap.html">Bs_HashMap</a></code></pre><hr width="100%">
+<div class="type-declaration">
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'b, 'id)</code> t</span> </pre>
+</div>
+
+
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">('a, 'id) <a href="Bs_Hash.html#TYPEt">Bs_Hash.t</a> -> int -> ('a, 'b, 'id) <a href="Bs_HashMap.html#TYPEt">t</a></code></pre>
+<pre><span id="VALclear"><span class="keyword">val</span> clear</span> : <code class="type">('a, 'b, 'id) <a href="Bs_HashMap.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+                    <div class="not-examples">
+                    Empty a hash table. Use <code class="code">reset</code> instead of <code class="code">clear</code> to shrink the
+    size of the bucket table to its initial size.<br>
+ 
+                    </div>
+                    
+                    </div>
+
+                  
+<pre><span id="VALsetDone"><span class="keyword">val</span> setDone</span> : <code class="type">('a, 'b, 'id) <a href="Bs_HashMap.html#TYPEt">t</a> -> 'a -> 'b -> unit</code></pre>
+<pre><span id="VALset"><span class="keyword">val</span> set</span> : <code class="type">('a, 'b, 'id) <a href="Bs_HashMap.html#TYPEt">t</a> -> 'a -> 'b -> ('a, 'b, 'id) <a href="Bs_HashMap.html#TYPEt">t</a></code></pre>
+<pre><span id="VALcopy"><span class="keyword">val</span> copy</span> : <code class="type">('a, 'b, 'id) <a href="Bs_HashMap.html#TYPEt">t</a> -> ('a, 'b, 'id) <a href="Bs_HashMap.html#TYPEt">t</a></code></pre>
+<pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type">('a, 'b, 'id) <a href="Bs_HashMap.html#TYPEt">t</a> -> 'a -> 'b option</code></pre>
+<pre><span id="VALhas"><span class="keyword">val</span> has</span> : <code class="type">('a, 'b, 'id) <a href="Bs_HashMap.html#TYPEt">t</a> -> 'a -> bool</code></pre><div class="info ">
+                    <div class="not-examples">
+                    <code class="code">has tbl x</code> checks if <code class="code">x</code> is bound in <code class="code">tbl</code>.<br>
+ 
+                    </div>
+                    
+                    </div>
+
+                  
+<pre><span id="VALremoveDone"><span class="keyword">val</span> removeDone</span> : <code class="type">('a, 'b, 'id) <a href="Bs_HashMap.html#TYPEt">t</a> -> 'a -> unit</code></pre>
+<pre><span id="VALremove"><span class="keyword">val</span> remove</span> : <code class="type">('a, 'b, 'id) <a href="Bs_HashMap.html#TYPEt">t</a> -> 'a -> ('a, 'b, 'id) <a href="Bs_HashMap.html#TYPEt">t</a></code></pre>
+<pre><span id="VALforEach"><span class="keyword">val</span> forEach</span> : <code class="type">('a, 'b, 'id) <a href="Bs_HashMap.html#TYPEt">t</a> -> ('a -> 'b -> unit [@bs]) -> unit</code></pre><div class="info ">
+                    <div class="not-examples">
+                    <code class="code">forEach tbl f</code> applies <code class="code">f</code> to all bindings in table <code class="code">tbl</code>.
+    <code class="code">f</code> receives the key as first argument, and the associated value
+    as second argument. Each binding is presented exactly once to <code class="code">f</code>.
+<p>
+
+    If the hash table was created in non-randomized mode, the order
+    in which the bindings are enumerated is reproducible between
+    successive runs of the program.<br>
+ 
+                    </div>
+                    
+                    </div>
+
+                  
+<pre><span id="VALreduce"><span class="keyword">val</span> reduce</span> : <code class="type">('a, 'b, 'id) <a href="Bs_HashMap.html#TYPEt">t</a> -> 'c -> ('c -> 'a -> 'b -> 'c [@bs]) -> 'c</code></pre><div class="info ">
+                    <div class="not-examples">
+                    <code class="code">Hashtbl.reduce  tbl init f</code> computes
+    <code class="code">(f kN dN ... (f k1 d1 init)...)</code>,
+    where <code class="code">k1 ... kN</code> are the keys of all bindings in <code class="code">tbl</code>,
+    and <code class="code">d1 ... dN</code> are the associated values.
+    Each binding is presented exactly once to <code class="code">f</code>.
+<p>
+
+    The order in which the bindings are passed to <code class="code">f</code> is unspecified.
+    However, if the table contains several bindings for the same key,
+    they are passed to <code class="code">f</code> in reverse order of introduction, that is,
+    the most recent binding is passed first.
+<p>
+
+    If the hash table was created in non-randomized mode, the order
+    in which the bindings are enumerated is reproducible between
+    successive runs of the program, and even between minor versions
+    of OCaml.  For randomized hash tables, the order of enumeration
+    is entirely random.<br>
+ 
+                    </div>
+                    
+                    </div>
+
+                  
+<pre><span id="VALfilterMapDone"><span class="keyword">val</span> filterMapDone</span> : <code class="type">('a, 'b, 'id) <a href="Bs_HashMap.html#TYPEt">t</a> -> ('a -> 'b -> 'b option [@bs]) -> unit</code></pre>
+<pre><span id="VALfilterMap"><span class="keyword">val</span> filterMap</span> : <code class="type">('a, 'b, 'id) <a href="Bs_HashMap.html#TYPEt">t</a> -><br>       ('a -> 'b -> 'b option [@bs]) -> ('a, 'b, 'id) <a href="Bs_HashMap.html#TYPEt">t</a></code></pre>
+<pre><span id="VALsize"><span class="keyword">val</span> size</span> : <code class="type">('a, 'b, 'id) <a href="Bs_HashMap.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+                    <div class="not-examples">
+                    <code class="code">Hashtbl.length tbl</code> returns the number of bindings in <code class="code">tbl</code>.
+    It takes constant time.  Multiple bindings are counted once each, so
+    <code class="code">Hashtbl.length</code> gives the number of times <code class="code">Hashtbl.iter</code> calls its
+    first argument.<br>
+ 
+                    </div>
+                    
+                    </div>
+
+                  
+<pre><span id="VALlogStats"><span class="keyword">val</span> logStats</span> : <code class="type">('a, 'b, 'c) <a href="Bs_HashMap.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+                    <div class="not-examples">
+                    <code class="code">Hashtbl.stats tbl</code> returns statistics about the table <code class="code">tbl</code>:
+    number of buckets, size of the biggest bucket, distribution of
+    buckets by size.<br>
+<div class="tag"> <b>Since</b> 4.00.0<br>
+ </div> 
+                    </div>
+                    
+                    </div>
+
+                  
+<pre><span id="VALtoArray"><span class="keyword">val</span> toArray</span> : <code class="type">('a, 'b, 'id) <a href="Bs_HashMap.html#TYPEt">t</a> -> ('a * 'b) array</code></pre>
+<pre><span id="VALofArray"><span class="keyword">val</span> ofArray</span> : <code class="type">dict:('a, 'id) <a href="Bs_Hash.html#TYPEt">Bs_Hash.t</a> -> ('a * 'b) array -> ('a, 'b, 'id) <a href="Bs_HashMap.html#TYPEt">t</a></code></pre>
+<pre><span id="VALmergeArrayDone"><span class="keyword">val</span> mergeArrayDone</span> : <code class="type">('a, 'b, 'id) <a href="Bs_HashMap.html#TYPEt">t</a> -> ('a * 'b) array -> unit</code></pre>
+<pre><span id="VALmergeArray"><span class="keyword">val</span> mergeArray</span> : <code class="type">('a, 'b, 'id) <a href="Bs_HashMap.html#TYPEt">t</a> -> ('a * 'b) array -> ('a, 'b, 'id) <a href="Bs_HashMap.html#TYPEt">t</a></code></pre>
+<pre><span id="VALkeysToArray"><span class="keyword">val</span> keysToArray</span> : <code class="type">('a, 'b, 'id) <a href="Bs_HashMap.html#TYPEt">t</a> -> 'a array</code></pre>
+<pre><span id="VALvaluesToArray"><span class="keyword">val</span> valuesToArray</span> : <code class="type">('a, 'b, 'id) <a href="Bs_HashMap.html#TYPEt">t</a> -> 'b array</code></pre><div class="type-declaration">
+<pre><span id="TYPEt0"><span class="keyword">type</span> <code class="type">('a, 'b, 'id)</code> t0</span> </pre>
+</div>
+
+
+<pre><span id="VALgetData"><span class="keyword">val</span> getData</span> : <code class="type">('k, 'v, 'id) <a href="Bs_HashMap.html#TYPEt">t</a> -> ('k, 'v, 'id) <a href="Bs_HashMap.html#TYPEt0">t0</a></code></pre>
+<pre><span id="VALgetDict"><span class="keyword">val</span> getDict</span> : <code class="type">('k, 'v, 'id) <a href="Bs_HashMap.html#TYPEt">t</a> -> ('k, 'id) <a href="Bs_Hash.html#TYPEt">Bs_Hash.t</a></code></pre>
+<pre><span id="VALpackDictData"><span class="keyword">val</span> packDictData</span> : <code class="type">dict:('k, 'id) <a href="Bs_Hash.html#TYPEt">Bs_Hash.t</a> -><br>       data:('k, 'v, 'id) <a href="Bs_HashMap.html#TYPEt0">t0</a> -> ('k, 'v, 'id) <a href="Bs_HashMap.html#TYPEt">t</a></code></pre>
+<pre><span id="VALcreate0"><span class="keyword">val</span> create0</span> : <code class="type">int -> ('a, 'b, 'id) <a href="Bs_HashMap.html#TYPEt0">t0</a></code></pre>
+<pre><span id="VALclear0"><span class="keyword">val</span> clear0</span> : <code class="type">('a, 'b, 'id) <a href="Bs_HashMap.html#TYPEt0">t0</a> -> unit</code></pre>
+<pre><span id="VALsetDone0"><span class="keyword">val</span> setDone0</span> : <code class="type">hash:('a, 'id) <a href="Bs_Hash.html#TYPEhash">Bs_Hash.hash</a> -><br>       eq:('a, 'id) <a href="Bs_Hash.html#TYPEeq">Bs_Hash.eq</a> -> ('a, 'b, 'id) <a href="Bs_HashMap.html#TYPEt0">t0</a> -> 'a -> 'b -> unit</code></pre>
+<pre><span id="VALget0"><span class="keyword">val</span> get0</span> : <code class="type">hash:('a, 'id) <a href="Bs_Hash.html#TYPEhash">Bs_Hash.hash</a> -><br>       eq:('a, 'id) <a href="Bs_Hash.html#TYPEeq">Bs_Hash.eq</a> -> ('a, 'b, 'id) <a href="Bs_HashMap.html#TYPEt0">t0</a> -> 'a -> 'b option</code></pre>
+<pre><span id="VALhas0"><span class="keyword">val</span> has0</span> : <code class="type">hash:('a, 'id) <a href="Bs_Hash.html#TYPEhash">Bs_Hash.hash</a> -><br>       eq:('a, 'id) <a href="Bs_Hash.html#TYPEeq">Bs_Hash.eq</a> -> ('a, 'b, 'id) <a href="Bs_HashMap.html#TYPEt0">t0</a> -> 'a -> bool</code></pre>
+<pre><span id="VALremove0"><span class="keyword">val</span> remove0</span> : <code class="type">hash:('a, 'id) <a href="Bs_Hash.html#TYPEhash">Bs_Hash.hash</a> -><br>       eq:('a, 'id) <a href="Bs_Hash.html#TYPEeq">Bs_Hash.eq</a> -> ('a, 'b, 'id) <a href="Bs_HashMap.html#TYPEt0">t0</a> -> 'a -> unit</code></pre>
+<pre><span id="VALforEach0"><span class="keyword">val</span> forEach0</span> : <code class="type">('a, 'b, 'id) <a href="Bs_HashMap.html#TYPEt0">t0</a> -> ('a -> 'b -> unit [@bs]) -> unit</code></pre>
+<pre><span id="VALreduce0"><span class="keyword">val</span> reduce0</span> : <code class="type">('a, 'b, 'id) <a href="Bs_HashMap.html#TYPEt0">t0</a> -> 'c -> ('c -> 'a -> 'b -> 'c [@bs]) -> 'c</code></pre>
+<pre><span id="VALfilterMapDone0"><span class="keyword">val</span> filterMapDone0</span> : <code class="type">('a, 'b, 'id) <a href="Bs_HashMap.html#TYPEt0">t0</a> -> ('a -> 'b -> 'b option [@bs]) -> unit</code></pre>
+<pre><span id="VALsize0"><span class="keyword">val</span> size0</span> : <code class="type">('a, 'b, 'id) <a href="Bs_HashMap.html#TYPEt0">t0</a> -> int</code></pre>
+<pre><span id="VALlogStats0"><span class="keyword">val</span> logStats0</span> : <code class="type">('a, 'b, 'id) <a href="Bs_HashMap.html#TYPEt0">t0</a> -> unit</code></pre>
+<pre><span id="VALtoArray0"><span class="keyword">val</span> toArray0</span> : <code class="type">('a, 'b, 'id) <a href="Bs_HashMap.html#TYPEt0">t0</a> -> ('a * 'b) array</code></pre>
+<pre><span id="VALofArray0"><span class="keyword">val</span> ofArray0</span> : <code class="type">hash:('a, 'id) <a href="Bs_Hash.html#TYPEhash">Bs_Hash.hash</a> -><br>       eq:('a, 'id) <a href="Bs_Hash.html#TYPEeq">Bs_Hash.eq</a> -> ('a * 'b) array -> ('a, 'b, 'id) <a href="Bs_HashMap.html#TYPEt0">t0</a></code></pre>
+<pre><span id="VALmergeArray0"><span class="keyword">val</span> mergeArray0</span> : <code class="type">('a, 'b, 'id) <a href="Bs_HashMap.html#TYPEt0">t0</a> -><br>       ('a * 'b) array -><br>       hash:('a, 'id) <a href="Bs_Hash.html#TYPEhash">Bs_Hash.hash</a> -><br>       eq:('a, 'id) <a href="Bs_Hash.html#TYPEeq">Bs_Hash.eq</a> -> ('a, 'b, 'id) <a href="Bs_HashMap.html#TYPEt0">t0</a></code></pre>
+<pre><span id="VALkeysToArray0"><span class="keyword">val</span> keysToArray0</span> : <code class="type">('a, 'b, 'id) <a href="Bs_HashMap.html#TYPEt0">t0</a> -> 'a array</code></pre>
+<pre><span id="VALvaluesToArray0"><span class="keyword">val</span> valuesToArray0</span> : <code class="type">('a, 'b, 'id) <a href="Bs_HashMap.html#TYPEt0">t0</a> -> 'b array</code></pre></body></html>

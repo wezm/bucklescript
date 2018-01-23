@@ -11,14 +11,54 @@
                  <title> Js.Json </title></head> 
                <body>
 <nav class="module-index"><ul><li><a href="Bs.html">Bs</a></li>
-<li><a href="Bs_dyn.html">Bs_dyn</a></li>
-<li><a href="Bs_dyn_lib.html">Bs_dyn_lib</a></li>
+<li><a href="Bs_Array.html">Bs_Array</a></li>
+<li><a href="Bs_Bag.html">Bs_Bag</a></li>
+<li><a href="Bs_BagM.html">Bs_BagM</a></li>
+<li><a href="Bs_Cmp.html">Bs_Cmp</a></li>
+<li><a href="Bs_Hash.html">Bs_Hash</a></li>
+<li><a href="Bs_HashMap.html">Bs_HashMap</a></li>
+<li><a href="Bs_HashMapInt.html">Bs_HashMapInt</a></li>
+<li><a href="Bs_HashMapString.html">Bs_HashMapString</a></li>
+<li><a href="Bs_HashMultiMap.html">Bs_HashMultiMap</a></li>
+<li><a href="Bs_HashSet.html">Bs_HashSet</a></li>
+<li><a href="Bs_HashSetInt.html">Bs_HashSetInt</a></li>
+<li><a href="Bs_HashSetString.html">Bs_HashSetString</a></li>
+<li><a href="Bs_List.html">Bs_List</a></li>
+<li><a href="Bs_Map.html">Bs_Map</a></li>
+<li><a href="Bs_MapInt.html">Bs_MapInt</a></li>
+<li><a href="Bs_MapIntM.html">Bs_MapIntM</a></li>
+<li><a href="Bs_MapM.html">Bs_MapM</a></li>
+<li><a href="Bs_MapString.html">Bs_MapString</a></li>
+<li><a href="Bs_MapStringM.html">Bs_MapStringM</a></li>
+<li><a href="Bs_Queue.html">Bs_Queue</a></li>
+<li><a href="Bs_Range.html">Bs_Range</a></li>
+<li><a href="Bs_Set.html">Bs_Set</a></li>
+<li><a href="Bs_SetInt.html">Bs_SetInt</a></li>
+<li><a href="Bs_SetIntM.html">Bs_SetIntM</a></li>
+<li><a href="Bs_SetM.html">Bs_SetM</a></li>
+<li><a href="Bs_SetString.html">Bs_SetString</a></li>
+<li><a href="Bs_SetStringM.html">Bs_SetStringM</a></li>
+<li><a href="Bs_Sort.html">Bs_Sort</a></li>
+<li><a href="Bs_SortInt.html">Bs_SortInt</a></li>
+<li><a href="Bs_SortString.html">Bs_SortString</a></li>
+<li><a href="Bs_Stack.html">Bs_Stack</a></li>
+<li><a href="Bs_internalAVLset.html">Bs_internalAVLset</a></li>
+<li><a href="Bs_internalAVLtree.html">Bs_internalAVLtree</a></li>
+<li><a href="Bs_internalBuckets.html">Bs_internalBuckets</a></li>
+<li><a href="Bs_internalBucketsType.html">Bs_internalBucketsType</a></li>
+<li><a href="Bs_internalMapInt.html">Bs_internalMapInt</a></li>
+<li><a href="Bs_internalMapString.html">Bs_internalMapString</a></li>
+<li><a href="Bs_internalMutableAVLMap.html">Bs_internalMutableAVLMap</a></li>
+<li><a href="Bs_internalSetBuckets.html">Bs_internalSetBuckets</a></li>
+<li><a href="Bs_internalSetInt.html">Bs_internalSetInt</a></li>
+<li><a href="Bs_internalSetString.html">Bs_internalSetString</a></li>
 <li><a href="Dom.html">Dom</a></li>
 <li><a href="Dom_storage.html">Dom_storage</a></li>
 <li><a href="Js.html">Js</a></li>
 <li><a href="Js_array.html">Js_array</a></li>
 <li><a href="Js_boolean.html">Js_boolean</a></li>
 <li><a href="Js_cast.html">Js_cast</a></li>
+<li><a href="Js_console.html">Js_console</a></li>
 <li><a href="Js_date.html">Js_date</a></li>
 <li><a href="Js_dict.html">Js_dict</a></li>
 <li><a href="Js_exn.html">Js_exn</a></li>
@@ -29,6 +69,7 @@
 <li><a href="Js_internal.html">Js_internal</a></li>
 <li><a href="Js_json.html">Js_json</a></li>
 <li><a href="Js_list.html">Js_list</a></li>
+<li><a href="Js_mapperRt.html">Js_mapperRt</a></li>
 <li><a href="Js_math.html">Js_math</a></li>
 <li><a href="Js_nativeint.html">Js_nativeint</a></li>
 <li><a href="Js_null.html">Js_null</a></li>
@@ -351,7 +392,7 @@
                   
 <pre><span id="VALparseExn"><span class="keyword">val</span> parseExn</span> : <code class="type">string -> <a href="Js_json.html#TYPEt">t</a></code></pre><div class="info ">
                     <div class="not-examples">
-                    <code class="code">parse s</code> parses the string <code class="code">s</code> into a JSON data structure
+                    <code class="code">parseExn s</code> parses the string <code class="code">s</code> into a JSON data structure
 <p>
 
 <b>Returns</b> a JSON data structure<br>
@@ -362,42 +403,42 @@
                      <div class="examples">
                     <pre class="example"> <pre class="codepre"><code class="code">(* parse a simple JSON string *)
 
-let json = 
+let json =
   try
-    Js_json.parse {| "foo" |} 
+    Js.Json.parseExn {| "foo" |}
   with
   | _ -&gt; failwith "Error parsing JSON string"
 in
-match Js.Json.reifyType json in
-| (Js.Json.String, value) -&gt; Js.log value
-| _ -&gt; failWith "Expected a string"
+match Js.Json.classify json with
+| Js.Json.JSONString value -&gt; Js.log value
+| _ -&gt; failwith "Expected a string"
 </code></pre>  </pre><pre class="example"> <pre class="codepre"><code class="code">(* parse a complex JSON string *)
 
 let getIds s =
-  let json = 
+  let json =
     try
-      Js.Json.parse s
+      Js.Json.parseExn s
     with
     | _ -&gt; failwith "Error parsing JSON string"
-  in 
-  match Js.Json.reifyType json with
-  | (Js.Json.Object, value) -&gt;
+  in
+  match Js.Json.classify json with
+  | Js.Json.JSONObject value -&gt;
     (* In this branch, compiler infer value : Js.Json.t Js.Dict.t *)
     begin match Js.Dict.get value "ids" with
-    | Some ids -&gt; 
-      begin match Js.Json.reifyType ids with
-      | (Js.Json.Array, ids) -&gt; 
+    | Some ids -&gt;
+      begin match Js.Json.classify ids with
+      | Js.Json.JSONArray ids -&gt;
         (* In this branch compiler infer ids : Js.Json.t array *)
         ids
-      | _ -&gt; failWith "Expected an array"
-      end 
-    | None -&gt; failWith "Expected an `ids` property"
-    end 
-  | _ -&gt; failWith "Expected an object"
+      | _ -&gt; failwith "Expected an array"
+      end
+    | None -&gt; failwith "Expected an `ids` property"
+    end
+  | _ -&gt; failwith "Expected an object"
 
 (* prints `1, 2, 3` *)
 let _ =
-  Js.log @@ getIds {| { "ids" : [1, 2, 3 ] } |} 
+  Js.log @@ getIds {| { "ids" : [1, 2, 3 ] } |}
 </code></pre>  </pre>
                     </div>
                     </div>

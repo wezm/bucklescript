@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+<head>
+                 <link rel="stylesheet" href="../api_static/tomorrow-night.css">
+                 <link rel="stylesheet" href="../api_static/style.css" type="text/css">
+                 <script src="../api_static//highlight.pack.js"></script>
+                 <script src="../api_static//script.js"></script>
+                 <script>hljs.initHighlightingOnLoad();</script> 
+                 <meta charset="utf8">
+                 <link rel="previous" href="Bs_internalAVLtree.html"><link rel="next" href="Bs_internalBucketsType.html">
+                 <title> Bs_internalBuckets </title></head> 
+               <body>
+<nav class="module-index"><ul><li><a href="Bs.html">Bs</a></li>
+<li><a href="Bs_Array.html">Bs_Array</a></li>
+<li><a href="Bs_Bag.html">Bs_Bag</a></li>
+<li><a href="Bs_BagM.html">Bs_BagM</a></li>
+<li><a href="Bs_Cmp.html">Bs_Cmp</a></li>
+<li><a href="Bs_Hash.html">Bs_Hash</a></li>
+<li><a href="Bs_HashMap.html">Bs_HashMap</a></li>
+<li><a href="Bs_HashMapInt.html">Bs_HashMapInt</a></li>
+<li><a href="Bs_HashMapString.html">Bs_HashMapString</a></li>
+<li><a href="Bs_HashMultiMap.html">Bs_HashMultiMap</a></li>
+<li><a href="Bs_HashSet.html">Bs_HashSet</a></li>
+<li><a href="Bs_HashSetInt.html">Bs_HashSetInt</a></li>
+<li><a href="Bs_HashSetString.html">Bs_HashSetString</a></li>
+<li><a href="Bs_List.html">Bs_List</a></li>
+<li><a href="Bs_Map.html">Bs_Map</a></li>
+<li><a href="Bs_MapInt.html">Bs_MapInt</a></li>
+<li><a href="Bs_MapIntM.html">Bs_MapIntM</a></li>
+<li><a href="Bs_MapM.html">Bs_MapM</a></li>
+<li><a href="Bs_MapString.html">Bs_MapString</a></li>
+<li><a href="Bs_MapStringM.html">Bs_MapStringM</a></li>
+<li><a href="Bs_Queue.html">Bs_Queue</a></li>
+<li><a href="Bs_Range.html">Bs_Range</a></li>
+<li><a href="Bs_Set.html">Bs_Set</a></li>
+<li><a href="Bs_SetInt.html">Bs_SetInt</a></li>
+<li><a href="Bs_SetIntM.html">Bs_SetIntM</a></li>
+<li><a href="Bs_SetM.html">Bs_SetM</a></li>
+<li><a href="Bs_SetString.html">Bs_SetString</a></li>
+<li><a href="Bs_SetStringM.html">Bs_SetStringM</a></li>
+<li><a href="Bs_Sort.html">Bs_Sort</a></li>
+<li><a href="Bs_SortInt.html">Bs_SortInt</a></li>
+<li><a href="Bs_SortString.html">Bs_SortString</a></li>
+<li><a href="Bs_Stack.html">Bs_Stack</a></li>
+<li><a href="Bs_internalAVLset.html">Bs_internalAVLset</a></li>
+<li><a href="Bs_internalAVLtree.html">Bs_internalAVLtree</a></li>
+<li><a href="Bs_internalBuckets.html">Bs_internalBuckets</a></li>
+<li><a href="Bs_internalBucketsType.html">Bs_internalBucketsType</a></li>
+<li><a href="Bs_internalMapInt.html">Bs_internalMapInt</a></li>
+<li><a href="Bs_internalMapString.html">Bs_internalMapString</a></li>
+<li><a href="Bs_internalMutableAVLMap.html">Bs_internalMutableAVLMap</a></li>
+<li><a href="Bs_internalSetBuckets.html">Bs_internalSetBuckets</a></li>
+<li><a href="Bs_internalSetInt.html">Bs_internalSetInt</a></li>
+<li><a href="Bs_internalSetString.html">Bs_internalSetString</a></li>
+<li><a href="Dom.html">Dom</a></li>
+<li><a href="Dom_storage.html">Dom_storage</a></li>
+<li><a href="Js.html">Js</a></li>
+<li><a href="Js_array.html">Js_array</a></li>
+<li><a href="Js_boolean.html">Js_boolean</a></li>
+<li><a href="Js_cast.html">Js_cast</a></li>
+<li><a href="Js_console.html">Js_console</a></li>
+<li><a href="Js_date.html">Js_date</a></li>
+<li><a href="Js_dict.html">Js_dict</a></li>
+<li><a href="Js_exn.html">Js_exn</a></li>
+<li><a href="Js_float.html">Js_float</a></li>
+<li><a href="Js_global.html">Js_global</a></li>
+<li><a href="Js_int.html">Js_int</a></li>
+<li><a href="Js_int64.html">Js_int64</a></li>
+<li><a href="Js_internal.html">Js_internal</a></li>
+<li><a href="Js_json.html">Js_json</a></li>
+<li><a href="Js_list.html">Js_list</a></li>
+<li><a href="Js_mapperRt.html">Js_mapperRt</a></li>
+<li><a href="Js_math.html">Js_math</a></li>
+<li><a href="Js_nativeint.html">Js_nativeint</a></li>
+<li><a href="Js_null.html">Js_null</a></li>
+<li><a href="Js_null_undefined.html">Js_null_undefined</a></li>
+<li><a href="Js_obj.html">Js_obj</a></li>
+<li><a href="Js_option.html">Js_option</a></li>
+<li><a href="Js_primitive.html">Js_primitive</a></li>
+<li><a href="Js_promise.html">Js_promise</a></li>
+<li><a href="Js_re.html">Js_re</a></li>
+<li><a href="Js_result.html">Js_result</a></li>
+<li><a href="Js_string.html">Js_string</a></li>
+<li><a href="Js_typed_array.html">Js_typed_array</a></li>
+<li><a href="Js_types.html">Js_types</a></li>
+<li><a href="Js_undefined.html">Js_undefined</a></li>
+<li><a href="Js_unsafe.html">Js_unsafe</a></li>
+<li><a href="Js_vector.html">Js_vector</a></li>
+<li><a href="Node.html">Node</a></li>
+<li><a href="Node_buffer.html">Node_buffer</a></li>
+<li><a href="Node_child_process.html">Node_child_process</a></li>
+<li><a href="Node_fs.html">Node_fs</a></li>
+<li><a href="Node_module.html">Node_module</a></li>
+<li><a href="Node_path.html">Node_path</a></li>
+<li><a href="Node_process.html">Node_process</a></li></ul></nav>
+<div class="navbar"><a class="pre" href="Bs_internalAVLtree.html" title="Bs_internalAVLtree">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="Bs_internalBucketsType.html" title="Bs_internalBucketsType">Next</a>
+</div>
+<h1>Module <a href="type_Bs_internalBuckets.html">Bs_internalBuckets</a></h1>
+
+<pre><span class="keyword">module</span> Bs_internalBuckets: <code class="code">sig</code> <a href="Bs_internalBuckets.html">..</a> <code class="code">end</code></pre><div class="info module top">
+                    <div class="not-examples">
+                    Adapted by Authors of BuckleScript 2017<br>
+ 
+                    </div>
+                    
+                    </div>
+
+                  <hr width="100%">
+
+<pre><span class="keyword">module</span> <a href="Bs_internalBuckets.C.html">C</a>: <code class="type"><a href="Bs_internalBucketsType.html">Bs_internalBucketsType</a></code></pre> <div class="info">                     
+                <div class="not-examples">
+                     
+                </div>
+                </div> 
+<pre><span class="keyword">include</span> struct ... end</pre>
+
+<pre><span class="keyword">module</span> <a href="Bs_internalBuckets.A.html">A</a>: <code class="type"><a href="Bs_Array.html">Bs_Array</a></code></pre> <div class="info">                     
+                <div class="not-examples">
+                     
+                </div>
+                </div> <div class="type-declaration">
+<pre><code><span id="TYPEstatistics"><span class="keyword">type</span> <code class="type"></code>statistics</span> = {</code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTstatistics.num_bindings">num_bindings</span>&nbsp;: <code class="type">int</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTstatistics.num_buckets">num_buckets</span>&nbsp;: <code class="type">int</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTstatistics.max_bucket_length">max_bucket_length</span>&nbsp;: <code class="type">int</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTstatistics.bucket_histogram">bucket_histogram</span>&nbsp;: <code class="type">int array</code>;</code></td>
+
+</tr></table>
+}
+
+</div>
+
+
+<pre><span id="VALcopy"><span class="keyword">val</span> copy</span> : <code class="type">('a, 'b) t0 -> ('a, 'b) t0</code></pre>
+<pre><span id="VALcopyBuckets"><span class="keyword">val</span> copyBuckets</span> : <code class="type">('a, 'b) bucket C.opt array -> ('a, 'b) bucket C.opt array</code></pre>
+<pre><span id="VALcopyBucket"><span class="keyword">val</span> copyBucket</span> : <code class="type">('a, 'b) bucket C.opt -> ('a, 'b) bucket C.opt</code></pre>
+<pre><span id="VALcopyAuxCont"><span class="keyword">val</span> copyAuxCont</span> : <code class="type">('a, 'b) bucket C.opt -> ('a, 'b) bucket -> unit</code></pre>
+<pre><span id="VALbucket_length"><span class="keyword">val</span> bucket_length</span> : <code class="type">int -> ('a, 'b) bucket C.opt -> int</code></pre>
+<pre><span id="VALdo_bucket_iter"><span class="keyword">val</span> do_bucket_iter</span> : <code class="type">f:('a -> 'b -> 'c [@bs]) -> ('a, 'b) bucket C.opt -> unit</code></pre>
+<pre><span id="VALiter0"><span class="keyword">val</span> iter0</span> : <code class="type">('a, 'b) bucket C.container -> ('a -> 'b -> 'c [@bs]) -> unit</code></pre>
+<pre><span id="VALdo_bucket_fold"><span class="keyword">val</span> do_bucket_fold</span> : <code class="type">f:('a -> 'b -> 'c -> 'a [@bs]) -> ('b, 'c) bucket C.opt -> 'a -> 'a</code></pre>
+<pre><span id="VALfold0"><span class="keyword">val</span> fold0</span> : <code class="type">('a, 'b) bucket C.container -> 'c -> ('c -> 'a -> 'b -> 'c [@bs]) -> 'c</code></pre>
+<pre><span id="VALlogStats0"><span class="keyword">val</span> logStats0</span> : <code class="type">('a, 'b) bucket C.container -> unit</code></pre>
+<pre><span id="VALfilterMapInplaceBucket"><span class="keyword">val</span> filterMapInplaceBucket</span> : <code class="type">('a -> 'b -> 'b option [@bs]) -><br>       ('a, 'b) bucket C.container -><br>       int -> ('a, 'b) bucket C.opt -> ('a, 'b) bucket -> unit</code></pre><div class="info ">
+                    <div class="not-examples">
+                    iterate the Buckets, in place remove the elements<br>
+ 
+                    </div>
+                    
+                    </div>
+
+                  
+<pre><span id="VALfilterMapInplace0"><span class="keyword">val</span> filterMapInplace0</span> : <code class="type">('a, 'b) bucket C.container -> ('a -> 'b -> 'b option [@bs]) -> unit</code></pre>
+<pre><span id="VALfillArray"><span class="keyword">val</span> fillArray</span> : <code class="type">int -> ('a * 'b) array -> ('a, 'b) bucket -> int</code></pre>
+<pre><span id="VALtoArray0"><span class="keyword">val</span> toArray0</span> : <code class="type">('a, 'b) bucket C.container -> ('a * 'b) array</code></pre>
+<pre><span id="VALfillArrayMap"><span class="keyword">val</span> fillArrayMap</span> : <code class="type">int -> 'a array -> ('b, 'c) bucket -> (('b, 'c) bucket -> 'a [@bs]) -> int</code></pre>
+<pre><span id="VALlinear"><span class="keyword">val</span> linear</span> : <code class="type">('a, 'b) bucket C.container -> (('a, 'b) bucket -> 'c [@bs]) -> 'c array</code></pre>
+<pre><span id="VALkeys0"><span class="keyword">val</span> keys0</span> : <code class="type">('a, 'b) bucket C.container -> 'a array</code></pre>
+<pre><span id="VALvalues0"><span class="keyword">val</span> values0</span> : <code class="type">('a, 'b) bucket C.container -> 'b array</code></pre>
+<pre><span id="VALtoArray0"><span class="keyword">val</span> toArray0</span> : <code class="type">('a, 'b) bucket C.container -> ('a * 'b) array</code></pre></body></html>
