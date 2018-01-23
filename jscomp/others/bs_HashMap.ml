@@ -255,7 +255,7 @@ let keysToArray0 = N.keys0
 let keysToArray h = N.keys0 (B.data h)
 let valuesToArray0 = N.values0  
 let valuesToArray h = N.values0 (B.data h)
-
+let getBucketHistogram h = N.getBucketHistogram (B.data h)
 let getData = B.data
 let getDict = B.dict
 let packDictData = B.bag 

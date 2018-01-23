@@ -71,7 +71,7 @@ var u = Bs_Array.append(Array_data_util.randomRange(30, 100), Array_data_util.ra
 
 var v = Bs_Array.zip(u, u);
 
-var xx = Bs_HashMap.ofArray(Y, v);
+var xx = Bs_HashMap.ofArray(v, Y);
 
 eqx("File \"bs_hashmap_test.ml\", line 40, characters 6-13", xx.data.size, 91);
 

@@ -165,8 +165,8 @@ let create0 = C.create0
 let clear0 = C.clear0
 
 let size0 = C.size
-let forEach0 = N.iter0
-let reduce0 = N.fold0
+let forEach0 = N.forEach0
+let reduce0 = N.reduce0
 let logStats0 = N.logStats0
 let toArray0 = N.toArray0 
 let toArray h = toArray0 (B.data h)
@@ -177,8 +177,8 @@ let create dict initialize_size =
 let clear h = clear0 (B.data h)
 
 let size h = C.size (B.data h)                 
-let forEach h f  = N.iter0 (B.data h) f 
-let reduce h init f = N.fold0 (B.data h) init f
+let forEach h f  = N.forEach0 (B.data h) f 
+let reduce h init f = N.reduce0 (B.data h) init f
 let logStats h = logStats0 (B.data h)
 
 let addDone (type a) (type id) (h : (a,id) t) (key:a)  = 
@@ -231,3 +231,4 @@ let mergeArray h arr = mergeArrayDone h arr; h
 let getData = B.data
 let getDict = B.dict
 let packDictData = B.bag 
+let getBucketHistogram h = N.getBucketHistogram (B.data h)

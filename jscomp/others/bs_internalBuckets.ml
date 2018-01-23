@@ -74,10 +74,10 @@ and copyAuxCont c prec =
 
 
 
-let rec bucket_length accu buckets = 
+let rec bucketLength accu buckets = 
   match C.toOpt buckets with 
   | None -> accu
-  | Some cell -> bucket_length (accu + 1) (next cell)
+  | Some cell -> bucketLength (accu + 1) (next cell)
 
 
 
@@ -112,23 +112,27 @@ let reduce0  h init f =
 
 
 
+let getMaxBucketLength h =
+  A.reduce (C.buckets h) 0
+    (fun[@bs] m b -> 
+       let len = bucketLength 0 b in
+       Pervasives.max m len)
 
-let logStats0 h =
-  let mbl =
-    A.reduce (C.buckets h) 0 (fun[@bs] m b -> 
-        let len = (bucket_length 0 b) in
-        Pervasives.max m len) in
+let getBucketHistogram h =
+  let mbl = getMaxBucketLength h in 
   let histo = A.initExn (mbl + 1) (fun[@bs] _ -> 0) in
   A.forEach (C.buckets h)
     (fun[@bs] b ->
-       let l = bucket_length 0 b in
+       let l = bucketLength 0 b in
        A.unsafe_set histo l (A.unsafe_get histo l + 1)
-    )
-  ;
-  Js.log [%obj{ num_bindings = (C.size h);
-                num_buckets = A.length (C.buckets h);
-                max_bucket_length = mbl;
-                bucket_histogram = histo }]
+    );
+  histo
+
+let logStats0 h =
+  let histogram = getBucketHistogram h in 
+  Js.log [%obj{ bindings = C.size h;
+                buckets = A.length (C.buckets h);
+                histogram}]
 
 
 (** iterate the Buckets, in place remove the elements *)                

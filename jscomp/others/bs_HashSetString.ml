@@ -134,8 +134,8 @@ let create = C.create0
 let clear = C.clear0
 
 let size = C.size
-let forEach = N.iter0
-let reduce = N.fold0
+let forEach = N.forEach0
+let reduce = N.reduce0
 let logStats = N.logStats0
 let toArray = N.toArray0
 
@@ -159,3 +159,4 @@ let mergeArray h arr =
   mergeArrayDone h arr; h
 
 let copy = N.copy
+let getBucketHistogram = N.getBucketHistogram 

@@ -36,3 +36,5 @@ val ofArray: key array -> t
 val mergeArrayDone: t -> key array -> unit
 
 val mergeArray: t -> key array -> t
+
+val getBucketHistogram: t -> int array

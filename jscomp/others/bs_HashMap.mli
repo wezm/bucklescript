@@ -128,6 +128,7 @@ val keysToArray:
 val valuesToArray:    
     ('a,'b,'id) t -> 'b array    
 
+val getBucketHistogram: _ t -> int array
 (****************************************************************************)
       
 type ('a, 'b, 'id) t0

@@ -1,7 +1,7 @@
 let suites :  Mt.pair_suites ref  = ref []
 let test_id = ref 0
 let eq loc x y = Mt.eq_suites ~test_id ~suites loc x y 
-
+let b loc x  = Mt.bool_suites ~test_id ~suites loc x  
 module N = Bs.HashSetInt 
 module S = Bs.SetInt 
 
@@ -54,6 +54,8 @@ let () =
   SI.stableSort v1;
   eq __LOC__  v0 v1 
   
-  
-
+let () =
+  let h = N.ofArray (I.randomRange  0 1_000_000) in 
+  let histo = N.getBucketHistogram h in 
+  b __LOC__ (A.length histo <= 10)
 let () = Mt.from_pair_suites __FILE__ !suites

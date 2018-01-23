@@ -52,3 +52,5 @@ val keys0 : ('a, 'b) t0 -> 'a array
 val values0 : ('a, 'b) t0 -> 'b array
 
 val toArray0 : ('a, 'b) t0 -> ('a * 'b) array
+
+val getBucketHistogram : ('a,'b) t0 -> int array

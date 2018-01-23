@@ -46,5 +46,5 @@ val ofArray: (key * 'a) array -> 'a t
 val mergeArrayDone: 'a t -> (key * 'a) array -> unit
 val mergeArray: 'a t -> (key * 'a) array -> 'a t
 
-
+val getBucketHistogram: _ t -> int array
 

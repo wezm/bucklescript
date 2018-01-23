@@ -60,7 +60,7 @@ val ofArray:
 
 val mergeArrayDone: ('a,'id) t -> 'a array -> unit
 val mergeArray: ('a,'id) t -> 'a array -> ('a, 'id)t
-
+val getBucketHistogram: _ t -> int array
 (****************************************************************************)
 type ('a, 'id) t0
 

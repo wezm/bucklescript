@@ -214,3 +214,4 @@ let copy = N.copy
 
 let keysToArray = N.keys0
 let valuesToArray = N.values0
+let getBucketHistogram = N.getBucketHistogram 
