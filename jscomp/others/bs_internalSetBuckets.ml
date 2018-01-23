@@ -44,7 +44,6 @@ let rec copy ( x : _ t0) : _ t0=
   C.container
     ~size:(C.size x)
     ~buckets:(copyBuckets (C.buckets x))
-    ~initialSize:(C.initialSize x)
 and copyBuckets ( buckets : _ bucket C.opt array) =  
   let len = A.length buckets in 
   let newBuckets = A.makeUninitializedUnsafe len in 

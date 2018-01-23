@@ -163,10 +163,10 @@ let has0 h key ~hash ~eq =
 
 let create0 = C.create0
 let clear0 = C.clear0
-let reset0 = C.reset0
-let length0 = C.length0
-let iter0 = N.iter0
-let fold0 = N.fold0
+
+let size0 = C.size
+let forEach0 = N.iter0
+let reduce0 = N.fold0
 let logStats0 = N.logStats0
 let toArray0 = N.toArray0 
 let toArray h = toArray0 (B.data h)
@@ -175,9 +175,9 @@ let create dict initialize_size =
   B.bag ~data:(create0 initialize_size)
     ~dict 
 let clear h = clear0 (B.data h)
-let reset h = reset0 (B.data h)
-let size h = length0 (B.data h)                 
-let forEach h f  = iter0 (B.data h) f 
+
+let size h = C.size (B.data h)                 
+let forEach h f  = N.iter0 (B.data h) f 
 let reduce h init f = N.fold0 (B.data h) init f
 let logStats h = logStats0 (B.data h)
 

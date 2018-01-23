@@ -132,8 +132,8 @@ let has h key =
 
 let create = C.create0
 let clear = C.clear0
-let reset = C.reset0
-let size = C.length0
+
+let size = C.size
 let forEach = N.iter0
 let reduce = N.fold0
 let logStats = N.logStats0

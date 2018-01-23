@@ -53,11 +53,6 @@ val clear : ('a, 'b, 'id) t -> unit
 (** Empty a hash table. Use [reset] instead of [clear] to shrink the
     size of the bucket table to its initial size. *)
 
-val reset0 : ('a, 'b, 'id) t0 -> unit
-val reset : ('a, 'b, 'id) t -> unit
-(** Empty a hash table and shrink the size of the bucket table
-    to its initial size.
-    @since 4.00.0 *)
 
 
 
@@ -166,11 +161,11 @@ val fold : ('a, 'b, 'id) t -> 'c -> ('c -> 'a -> 'b ->  'c [@bs]) ->  'c
 val filterMapInplace0 : ('a, 'b, 'id) t0 -> ('a -> 'b -> 'b option [@bs]) -> unit
 val filterMapInplace : ('a, 'b, 'id) t -> ('a -> 'b -> 'b option [@bs]) ->  unit
   
-val length0 : ('a, 'b, 'id) t0 -> int
-val length  : ('a, 'b, 'id) t -> int  
-(** [Hashtbl.length tbl] returns the number of bindings in [tbl].
+
+val size  : ('a, 'b, 'id) t -> int  
+(** [size tbl] returns the number of bindings in [tbl].
     It takes constant time.  Multiple bindings are counted once each, so
-    [Hashtbl.length] gives the number of times [Hashtbl.iter] calls its
+    [size] gives the number of times [Hashtbl.iter] calls its
     first argument. *)
 
 

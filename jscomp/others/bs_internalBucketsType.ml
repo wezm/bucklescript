@@ -26,12 +26,13 @@ type 'a opt = 'a Js.undefined
 type 'c container =
   { mutable size: int;                        (* number of entries *)
     mutable buckets: 'c opt array;  (* the buckets *)
-    initialSize: int;                        (* initial array size *)
-  } [@@bs.deriving abstract]
-module A = Bs_Array
+  }
+[@@bs.deriving abstract]
 
+module A = Bs_Array
 external toOpt : 'a opt -> 'a option = "#undefined_to_opt"
 external return : 'a -> 'a opt = "%identity" 
+
 let emptyOpt = Js.undefined   
 let rec power_2_above x n =
   if x >= n then x
@@ -40,7 +41,8 @@ let rec power_2_above x n =
 
 let create0  initialSize =
   let s = power_2_above 16 initialSize in  
-  container  ~initialSize:s ~size:0
+  container
+    ~size:0
     ~buckets:(A.makeUninitialized s)
 
 let clear0 h =
@@ -50,20 +52,6 @@ let clear0 h =
   for i = 0 to len - 1 do
     A.unsafe_set h_buckets i  emptyOpt
   done
-
-let reset0 h =
-  let len = A.length (buckets h) in
-  let h_initialSize = initialSize h in
-  if len = h_initialSize then
-    clear0 h
-  else begin
-    sizeSet h 0;
-    bucketsSet h (A.makeUninitialized h_initialSize)
-  end
-
-let length0 h = size h
-  
-
 
 
 type statistics = {

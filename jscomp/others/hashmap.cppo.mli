@@ -15,6 +15,11 @@ val create:  int -> 'b t
 val clear: 'b t -> unit
 
 val setDone: 'a t -> key -> 'a -> unit
+(** [setDone tbl k v] if [k] does not exist,
+    add the binding [k,v], otherwise, update the old value with the new
+    [v]
+*)
+  
 val set: 'a t -> key -> 'a -> 'a t   
 val copy: 'a t -> 'a t 
 val get:  'a t -> key -> 'a option
